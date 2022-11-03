@@ -1,6 +1,8 @@
 import 'dart:js_util';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_7_navigation_24_10_2022/pages/alert_page.dart';
+import 'package:flutter_application_7_navigation_24_10_2022/pages/avatar_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -60,23 +62,18 @@ class HomePage extends StatelessWidget {
                 height: 15.0,
               ),
               //invocando al conteiner de la segunda clase 
-              ItemComponentWidget(title: 'Paul'),
+              ItemComponentWidget(
+                title: 'Paul', 
+                toPage: AvatarPage(),
+                ),
               const SizedBox(
                 height: 15.0,
               ),
-              ItemComponentWidget(title: 'Alert'),
-              const SizedBox(
-                height: 15.0,
-              ),
-              ItemComponentWidget(title: 'Cards'),
-              const SizedBox(
-                height: 15.0,
-              ),
-              ItemComponentWidget(title: 'Imputs'),
-              const SizedBox(
-                height: 15.0,
-              ),
-              ItemComponentWidget(title: 'List'),
+              
+              ItemComponentWidget(
+                title: 'alert', 
+                toPage: AlertPage(),
+                ),
               
             ],
               ),
@@ -88,8 +85,9 @@ class HomePage extends StatelessWidget {
 
 class ItemComponentWidget extends StatelessWidget {
   String title;
+  Widget toPage;
   // creando constructor 
-  ItemComponentWidget({required this.title});
+  ItemComponentWidget({required this.title, required this.toPage});
 
   @override
   Widget build(BuildContext context) {
@@ -108,6 +106,10 @@ class ItemComponentWidget extends StatelessWidget {
                 ],
               ),
               child: ListTile(
+                onTap: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder:(context) => toPage));
+                },
                 leading: Icon(
                   Icons.check_circle_outline,
                   color: Colors.black,
@@ -129,3 +131,4 @@ class ItemComponentWidget extends StatelessWidget {
             );
 }
 }
+
