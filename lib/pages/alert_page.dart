@@ -54,12 +54,40 @@ ShowMyAlert (BuildContext context) {
           //centrando el boton de alert
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(
+                height: 10.0,
+              ),
+
             ElevatedButton(
               onPressed: () {
                 ShowMyAlert(context);
               }, 
-            child: Text('alert'),
+            child: Text('alert1'),
             ),
+          // alert 2
+          const SizedBox(
+                height: 10.0,
+              ),
+
+          ElevatedButton(
+              onPressed: () {
+                ShowMyAlert(context);
+              }, 
+            child: Text('alert2'),
+            ),
+          //alert 3
+          const SizedBox(
+                height: 10.0,
+              ),
+          ElevatedButton(
+              onPressed: () {
+                ShowMyAlert(context);
+              }, 
+            child: Text('alert3'),
+            ),
+
+            /////
+
           ],
         ),
       ),
