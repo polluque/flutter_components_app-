@@ -3,6 +3,7 @@ import 'dart:js_util';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_7_navigation_24_10_2022/pages/alert_page.dart';
 import 'package:flutter_application_7_navigation_24_10_2022/pages/avatar_page.dart';
+import 'package:flutter_application_7_navigation_24_10_2022/pages/card_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -66,6 +67,7 @@ class HomePage extends StatelessWidget {
                 title: 'Paul', 
                 toPage: AvatarPage(),
                 ),
+
               const SizedBox(
                 height: 15.0,
               ),
@@ -74,7 +76,17 @@ class HomePage extends StatelessWidget {
                 title: 'alert', 
                 toPage: AlertPage(),
                 ),
-              
+
+              const SizedBox(
+                height: 15.0,
+              ),
+
+              ItemComponentWidget(
+                title: 'card', 
+                toPage: CardPage(),
+                ),
+
+
             ],
               ),
         )
